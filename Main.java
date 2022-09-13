@@ -19,10 +19,9 @@ public class Main {
             grade2[0] = 85; // 배열의 길이보다 적은 수의 배열 요소만 초기화
 
 
+            for (int value : grade1) {
 
-            for (int i = 0; i < grade1.length; i++) {
-
-                System.out.print(grade1[i] + " "); // 인덱스를 이용한 배열로의 접근
+                System.out.print(value + " "); // 인덱스를 이용한 배열로의 접근
 
             }
 
@@ -86,7 +85,7 @@ public class Main {
             System.out.println();
 
             // 3. Object 클래스의 clone() 메소드
-            int[] arr4 = (int[])arr1.clone();
+            int[] arr4 = arr1.clone();
 
             for (int i = 0; i < arr4.length; i++) {
                 System.out.print(arr4[i] + " ");
@@ -106,6 +105,31 @@ public class Main {
 
         }
 
+    class Car {                    // 클래스 이름
+
+        private String modelName;  // 필드
+
+        private int modelYear;     // 필드
+        private int color;
+
+
+        Car(String modelName, int modelYear) { // 생성자
+
+            this.modelName = modelName;
+
+            this.modelYear = modelYear;
+
+        }
+
+
+
+        public String getModel() { // 메소드
+
+            return this.modelYear + "년식 " + this.modelName + " " + this.color;
+
+        }
+
+    }
 
 
     }
