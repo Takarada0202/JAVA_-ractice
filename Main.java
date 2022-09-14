@@ -133,3 +133,227 @@ public class Main {
 
 
     }
+
+class Car {
+
+    private String modelName;
+
+    private int modelYear;
+
+    private String color;
+
+    private int maxSpeed;
+
+    private int currentSpeed;
+
+
+
+    Car(String modelName, int modelYear, String color, int maxSpeed) {
+
+        this.modelName = modelName;
+
+        this.modelYear = modelYear;
+
+        this.color = color;
+
+        this.maxSpeed = maxSpeed;
+
+        this.currentSpeed = 0;
+
+    }
+
+
+
+    Car() {
+
+        this("소나타", 2012, "검정색", 160); // 다른 생성자를 호출함.
+
+    }
+
+
+
+    public String getModel() {
+
+        return this.modelYear + "년식 " + this.modelName + " " + this.color;
+
+    }
+
+}
+
+
+
+ class method {
+
+    public static void main(String[] args) {
+
+        Car tcpCar = new Car(); System.out.println(tcpCar.getModel());
+
+    }
+
+}
+
+class Field {
+
+    static int classVar = 10; // 클래스 변수 선언
+
+    int instanceVar = 20;     // 인스턴스 변수 선언
+
+}
+
+
+
+class Member01 {
+
+    public static void main(String[] args) {
+
+        int var = 30;                   // 지역 변수 선언
+
+        System.out.println(var + "\n"); // 지역 변수 참조
+
+
+
+        Field myField1 = new Field();   // 인스턴스 생성
+
+        Field myField2 = new Field();   // 인스턴스 생성
+
+
+
+        System.out.println(Field.classVar); // 클래스 변수 참조
+
+        System.out.println(myField1.classVar);
+
+        System.out.println(myField2.classVar + "\n");
+
+
+
+        myField1.classVar = 100;            // 클래스 변수의 값을 변경
+
+
+
+        System.out.println(Field.classVar); // 클래스 변수 참조
+
+        System.out.println(myField1.classVar);
+
+        System.out.println(myField2.classVar + "\n");
+
+
+
+        System.out.println(myField1.instanceVar); // 인스턴스 변수 참조
+
+        System.out.println(myField2.instanceVar + "\n");
+
+
+
+        myField1.instanceVar = 400;               // 인스턴스 변수의 값을 변경
+
+
+
+        System.out.println(myField1.instanceVar); // 인스턴스 변수 참조
+
+        System.out.println(myField2.instanceVar);
+
+    }
+
+}
+class Method {
+
+    int a = 50, b = 20;                            // 인스턴스 변수
+
+    int add() { return a + b; }                    // 인스턴스 메소드
+
+    static int add(int x, int y) { return x + y; } // 클래스 메소드
+
+}
+
+
+
+class Member02 {
+
+    public static void main(String[] args) {
+
+        System.out.println(Method.add(20, 30)); // 클래스 메소드의 호출
+
+        Method myMethod = new Method();         // 인스턴스 생성
+
+        System.out.println(myMethod.add());     // 인스턴스 메소드의 호출
+
+    }
+
+}
+class InitBlock {
+
+    static int classVar = 10;         // 클래스 변수의 명시적 초기화
+
+    int instanceVar = 10;             // 인스턴스 변수의 명시적 초기화
+
+    static { classVar = 20; }         // 클래스 초기화 블록을 이용한 초기화
+
+    { instanceVar = 20; }             // 인스턴스 초기화 블록을 이용한 초기화
+
+    InitBlock() { instanceVar = 30; } // 생성자를 이용한 초기화
+
+}
+
+
+
+class Member05 {
+
+    public static void main(String[] args) {
+
+        System.out.println(InitBlock.classVar);
+
+        InitBlock myInit = new InitBlock();
+
+        System.out.println(myInit.instanceVar);
+
+    }
+
+}
+
+class Parent {
+
+    int a;
+
+    Parent() { a = 10; }
+
+    Parent(int n) { a = n; }
+
+}
+
+
+
+class Child extends Parent {
+
+    int b;
+
+    Child() {
+
+      //super(40);
+
+        b = 20;
+
+    }
+
+    void display() {
+
+        System.out.println(a);
+
+        System.out.println(b);
+
+    }
+
+}
+
+
+
+ class Inheritance04 {
+
+    public static void main(String[] args) {
+
+        Child ch = new Child();
+
+        ch.display();
+
+    }
+
+}
