@@ -357,3 +357,103 @@ class Child extends Parent {
     }
 
 }
+
+class Parent1 { }
+
+class Child1 extends Parent { }
+
+class Brother extends Parent { }
+
+
+
+ class Polymorphism01 {
+
+    public static void main(String[] args) {
+
+        Parent1 p = new Parent1();
+
+        System.out.println(p instanceof Object); // true
+
+        System.out.println(p instanceof Parent1); // true
+
+//        System.out.println(p instanceof Child1);  // false
+
+        System.out.println();
+
+
+
+        Parent c = new Child1();
+
+        System.out.println(c instanceof Object); // true
+
+        System.out.println(c instanceof Parent); // true
+
+        System.out.println(c instanceof Child1);  // true
+
+    }
+
+}
+
+interface Animal { public abstract void cry(); }
+
+interface Pet { public abstract void play(); }
+
+
+
+class Cat implements Animal, Pet {
+
+    public void cry() {
+
+        System.out.println("냐옹냐옹!");
+
+    }
+
+    public void play() {
+
+        System.out.println("쥐 잡기 놀이하자~!");
+
+    }
+
+}
+
+
+
+class Dog implements Animal, Pet {
+
+    public void cry() {
+
+        System.out.println("멍멍!");
+
+    }
+
+    public void play() {
+
+        System.out.println("산책가자~!");
+
+    }
+
+}
+
+
+
+class Polymorphism04 {
+
+    public static void main(String[] args) {
+
+        Cat c = new Cat();
+
+        Dog d = new Dog();
+
+
+
+        c.cry();
+
+        c.play();
+
+        d.cry();
+
+        d.play();
+
+    }
+
+}
